@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+        <title>JCK Register</title>
+        <script src="jquery-1.11.3.min.js" type="text/javascript"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous" >
+
+            <!-- Optional theme -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+                <!-- Latest compiled and minified JavaScript -->
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+                <script language="javascript" type="text/javascript">
+                // <!CDATA[
+
+                    function Button1_onclick() {
+if(document.myForm.registerUsername.value == "")
+		alert("Your UserName must not be null!!!")
+else if(document.myForm.registerPassword.value == "")
+		alert("Your Password must not be null!!!")
+else if(document.myForm.registerFName.value == "")
+		alert("Your First Name must not be null!!!")
+else if(document.myForm.registerLName.value == "")
+		alert("Your Last Name must not be null!!!")
+else if(document.myForm.registerSSN.value == "")
+		alert("Your SSN must not be null!!!")            
+else if(document.myForm.registerEmail.value == "")
+		alert("Your Email must not be null!!!")
+else if(document.myForm.registerAddress.value == "")
+		alert("Your Address must not be null!!!")
+else if(document.myForm.registerZipCode.value == "")
+		alert("Your Zip Code must not be null!!!")   
+else if(document.myForm.registerState.value == "")
+		alert("Your State must not be null!!!")            
+else if(document.myForm.registerCity.value == "")
+		alert("Your City must not be null!!!")
+else if(document.myForm.registerCCN.value == "")
+		alert("Your Credit Card Number must not be null!!!")
+else if(document.myForm.registerPhone.value == "")
+		alert("Your Phone Number must not be null!!!")
+
+    
+  else{document.myForm.submit()}
+}
+
+                // ]]>
+                </script>
+                </head>
+                <body>
+                    <div class = "navbar navbar-inverse navbar-static-top">
+                        <div class = "container">
+                            <div class = "navbar-header">
+                                <button class = "navbar-toggle collapsed" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+                                    <span class = "icon-bar"></span>
+                                    <span class = "icon-bar"></span>
+                                    <span class = "icon-bar"></span>
+                                </button>
+                            </div><!--drop down collapse-->
+                            <div class = "collapse navbar-collapse navHeaderCollapse">
+                                <ul class = "nav navbar-nav">
+                                    <li><a href="index.htm">Home</a> </li>
+                                    <li><a href="help.htm">AboutUs</a> </li>
+                                    <li><a href="wireframe.html">Contact</a> </li>
+                                </ul>
+                            </div><!--ul-->       
+                        </div><!--container-->
+                    </div> <!--navbar top -->
+                    
+                    
+                    
+                    <div class="col-sm-5"></div>
+                    <div class="col-sm-2">
+                        <h1><strong>Registration</strong></h1>
+                        <form name="myForm" action="useradd" method="post">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="registerUsername" id="registerUser" placeholder="Username">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" name="registerPassword" id="registerPassword" placeholder="Password">
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-xs-6">
+                                    <input type="text" class="form-control" name="registerFName" id="registerFName" placeholder="First Name">
+                                </div>
+                                <div class="col-xs-6">
+                                    <input type="text" class="form-control" name="registerLName" id="registerLName" placeholder="Last Name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="ssn" class="form-control" name="registerSSN" id="registerSSN" placeholder="SSN">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" name="registerEmail" id="registerEmail" placeholder="Email">
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-xs-6">
+                                    <input type="text" class="form-control" name="registerAddress" id="registerAddress" placeholder="Address">
+                                </div>
+                                <div class="col-xs-6">
+                                    <input type="number" class="form-control" name="registerZipCode" id="registerZipCode" placeholder="Zip Code">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-xs-6">
+                                    <input type="text" class="form-control" name="registerState" id="registerState" placeholder="State">
+                                </div>
+                                <div class="col-xs-6">
+                                    <input type="text" class="form-control" name="registerCity" id="registerCity" placeholder="City">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="registerCCN" id="registerCCN" placeholder="Credit Card #">
+                                *Enter only if Client
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="registerPhone" id="registerPhone" placeholder="Telephone">
+                            </div>
+                            
+                            <div class="row form-group">
+                                <select class="form-control" name="registerStatus" >
+                                    <option value="Client">Client</option>
+                                    <option value="CustRep">Customer Representative</option>
+                                    <option value="Manager">Manager</option>
+                                </select>
+                            </div>
+                            <div class="row-form-group">
+                                <input type="number" class="form-control" name="registerHourlyRate" id="registerHourlyRate" placeholder="Hourly Rate"/><span>*Enter only if Manager or Customer Representative</span>
+                            </div>                        
+
+                            <button type="submit" value="Register" onclick="return Button1_onclick()" class="btn btn-default">Register</button>
+                        </form> 
+                        
+                    </div>    
+                </body>
+                </html>
