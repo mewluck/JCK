@@ -14,7 +14,47 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
     </head>
-    
+    <%
+                String mysJDBCDriver = "com.mysql.jdbc.Driver";
+                String mysURL = "jdbc:mysql://mysql2.cs.stonybrook.edu:3306/chmak";
+                String mysUserID = "chmak";
+                String mysPassword = "108695120";
+
+                                java.sql.Connection conn = null;
+                                try {
+                                    Class.forName(mysJDBCDriver).newInstance();
+                                    java.util.Properties sysprops = System.getProperties();
+                                    sysprops.put("user", mysUserID);
+                                    sysprops.put("password", mysPassword);
+                                    conn = java.sql.DriverManager.getConnection(mysURL, sysprops);
+                                    System.out.println("Connected successfully to database using JConnect");
+
+                                    String username = session.getValue("login").toString();
+                                    String query = "SELECT * FROM allacc WHERE allacc.Username = ?";
+                                    java.sql.PreparedStatement ps = conn.prepareStatement(query);
+                                    
+                                    ps.setString(1, username);
+
+                                    //connect to the database
+                                    conn = java.sql.DriverManager.getConnection(mysURL, sysprops);
+                                    System.out.println("Connected successfully to database using JConnect");
+                                    conn.setAutoCommit(false);
+
+                                    java.sql.ResultSet rs = ps.executeQuery();
+                                    
+                                    while(rs.next()){
+                                        session.putValue("ID", rs.getString("ID"));
+                                        System.out.println("ID: " + rs.getString("ID").toString());
+                                    }
+                                    
+                                    query = "SELECT * FROM account WHERE account.Client = ?";
+                                    ps = conn.prepareStatement(query);
+                                    ps.setString(1, session.getValue("ID").toString());
+                                    rs = ps.executeQuery();
+                                    
+               
+                            
+%>
     
     <body>
        <div class = "navbar navbar-inverse navbar-static-top">
@@ -32,11 +72,37 @@
     <li><a href="ClientStocks.jsp">Stock History</a></li>
     <li><a href="BestSellingStocks.jsp">Best Selling Stocks</a></li>
     <li><a href="ClientStockSuggestions.jsp">Stock Suggestions</a></li>
-    <li><a href="ClientTest.jsp">TEST</a></li>
 </ul>
 </div>  
+
+
     
 <h1><strong>Welcome <%=session.getValue("login")%></strong></h1>
+
+<table class="table">
+    <tr>
+        <th>Stock</th>
+        <th>Number of Shares</th>
+    </tr>
+    <% while(rs.next()) { %>
+    <tr>
+        <td><%=rs.getString("Stock")%></td>
+        <td><%=rs.getString("NumShares")%></td>
+    </tr>
+    <% }%>
+</table>
+
+    <% }
+                             catch (Exception e) {
+                                    e.printStackTrace();
+                                    out.print(e.toString());
+                                } finally {
+                                    try {
+                                        conn.close();
+                                    } catch (Exception ee) {
+                                    };
+                                }
+                            %>
 
     </body>
 </html>
