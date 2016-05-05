@@ -27,9 +27,9 @@
 
 <div class="navbar-header">
 <ul class="nav navbar-left navbar-nav navbar-inverse col-md-3">
-    <li class="active"><a href="ClientHome.jsp">Home</a></li>
+    <li><a href="ClientHome.jsp">Home</a></li>
     <li><a href="ClientConditionOrders.jsp">Conditional Orders</a></li>
-    <li><a href="ClientStocks.jsp">Stock History</a></li>
+    <li class="active"><a href="ClientStocks.jsp">Stock History</a></li>
     <li><a href="ClientStockSuggestions.jsp">Stock Suggestions</a></li>
     <li><a href="ClientHelp.jsp">Help</a></li>
 </ul>

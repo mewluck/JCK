@@ -25,29 +25,39 @@
 
 <div class="navbar-header">
 <ul class="nav navbar-left navbar-nav navbar-inverse col-md-3">
-    <li><a href="ClientHome.jsp">Home</a></li>
-    <li><a href="ClientConditionOrders.jsp">Conditional Orders</a></li>
-    <li><a href="ClientStocks.jsp">Stock History</a></li>
-    <li><a href="ClientStockSuggestions.jsp">Stock Suggestions</a></li>
-    <li class="active"><a href="ClientHelp.jsp">Help</a></li>
+    <li class="active"><a href="ManagerHome.jsp">Home</a></li>
+    <li><a href="Stocks.jsp">Stocks</a></li>
+    <li><a href="EmployeeEdit.jsp">Employees</a></li>
+    <li><a href="Orders.jsp">Orders</a></li>
+    <li><a href="Revenue.jsp">Revenue</a></li>
+    <li><a href="ManagerHelp.jsp">Help</a></li>
 </ul>
 </div> 
 
 
     
-<h1><strong>Client Help</strong></h1>
-<p>Welcome to JCK Trade! </p>
-<p>From your client webpage, you can click on the links on the left-hand
-    side of your screen to view various information about your account. From 
-your home page, you can see your current stock holdings as well as the current
-best selling stocks. From the conditional order tab, you can view the status of
-your various conditional orders. You can view your stock history from the stock 
-history tab. The stock suggestion tab will display suggestions for you as 
-determined by the market and our employees. The help tab will return you to this
-menu.
+<h1><strong>Manager Help</strong></h1>
+<p>Welcome to JCK Trade!</p>
+<p>
+    From the manager home screen, you can access a sales report for a month from
+    the dropdown menu. 
 </p>
-<p>If you have any further questions, feel free to contact your customer 
-representative.
+<p>
+    From the Stocks menu, you can view all the types of stocks that we currently
+    offer as well as information about them. You can also see the frequency of 
+    their trading. You can also update these stocks using the two menus beside
+    the information. Enter the information and then click update. 
+</p>
+<p>
+    The Orders tab will let you view information on the orders in the system. 
+    You can search by stock symbol or the name of the person who placed the 
+    order.
+</p>
+<p>
+    From the Revenue tab, you can see the employee who has generated the most
+    revenue as well as the customer who has generated us the most revenue. You
+    can also generate revenue tables based on Stock ID, Stock Type, and Customer
+    ID. 
 </p>
     </body>
 </html>

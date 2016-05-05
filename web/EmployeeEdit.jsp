@@ -34,8 +34,9 @@
     <li class="active"><a href="EmployeeEdit.jsp">Employees</a></li>
     <li><a href="Orders.jsp">Orders</a></li>
     <li><a href="Revenue.jsp">Revenue</a></li>
+    <li><a href="ManagerHelp.jsp">Help</a></li>
 </ul>
-</div>  
+</div>   
 
 <div class="col-md-6 row">
     <h1><strong>Employees</strong></h1>

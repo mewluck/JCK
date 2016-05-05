@@ -37,17 +37,23 @@
     
 <h1><strong>Client Help</strong></h1>
 <p>Welcome to JCK Trade! </p>
-<p>From your client webpage, you can click on the links on the left-hand
-    side of your screen to view various information about your account. From 
-your home page, you can see your current stock holdings as well as the current
-best selling stocks. From the conditional order tab, you can view the status of
-your various conditional orders. You can view your stock history from the stock 
-history tab. The stock suggestion tab will display suggestions for you as 
-determined by the market and our employees. The help tab will return you to this
-menu.
+<p>
+    From the record order screen, you'll be able to record an order that you 
+    have made with a customer. Enter in the necessary information and hit Record.
 </p>
-<p>If you have any further questions, feel free to contact your customer 
-representative.
+<p>
+    The Clients tab will give you information about all of our clients. You can
+    edit information about the clients using the Edit Client Information form.
+    Using this form, you'll be able to update or delete information about our
+    clients.
+</p>
+<p>
+    The Customer Mailing List screen will give you the first name, last name, 
+    and email of our clients. 
+</p>
+<p>
+    The stock suggestion page will generate a stock suggestion for the customer
+    given their ID. 
 </p>
     </body>
 </html>

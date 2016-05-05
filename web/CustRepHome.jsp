@@ -33,6 +33,7 @@
     <li><a href="ClientEdit.jsp">Clients</a></li>
     <li><a href="CustMail.jsp">Customer MailingList</a></li>
     <li><a href="StockSuggestion.jsp">Stock Suggestion</a></li>
+    <li><a href="CustRepHelp.jsp">Help</a></li>
 </ul>
 </div>  
     
