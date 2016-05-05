@@ -52,6 +52,14 @@
                                     ps.setString(1, session.getValue("ID").toString());
                                     rs = ps.executeQuery();
                                     
+                                    query = "SELECT T.StockId, SUM(O.NumShares) AS ShareSold " +
+                                            "FROM Orders O, Trade T " +
+                                            "WHERE OrderType = 'Buy' AND O.Id = T.OrderId " + 
+                                            "GROUP BY T.StockId " + 
+                                            "ORDER BY ShareSold DESC";
+                                    ps = conn.prepareStatement(query);
+                                    java.sql.ResultSet rs1 = ps.executeQuery();
+                                    
                
                             
 %>
@@ -70,8 +78,8 @@
     <li class="active"><a href="ClientHome.jsp">Home</a></li>
     <li><a href="ClientConditionOrders.jsp">Conditional Orders</a></li>
     <li><a href="ClientStocks.jsp">Stock History</a></li>
-    <li><a href="BestSellingStocks.jsp">Best Selling Stocks</a></li>
     <li><a href="ClientStockSuggestions.jsp">Stock Suggestions</a></li>
+    <li><a href="ClientHelp.jsp">Help</a></li>
 </ul>
 </div>  
 
@@ -93,6 +101,21 @@
     </tr>
     <% 
     session.putValue("AccountId", rs.getString("Id"));
+    }%>
+</table>
+
+<table class="table">
+    <h1>Best Sellers</h1>
+    <tr>
+        <th>Stock</th>
+        <th>Sum</th>
+    </tr>
+    <% while(rs1.next()) { %>
+    <tr>
+        <td><%=rs1.getString("StockId")%></td>
+        <td><%=rs1.getString("ShareSold")%></td>
+    </tr>
+    <% 
     }%>
 </table>
 
