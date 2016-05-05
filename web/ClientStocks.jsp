@@ -54,10 +54,11 @@
                                     conn = java.sql.DriverManager.getConnection(mysURL, sysprops);
                                     System.out.println("Connected successfully to database using JConnect");
 
-                                    String query = "SELECT O.Id, O.NumShares, O.PricePerShare, O.DateTime, O.Percentage, O.PriceType, O.OrderType "
-                                            + "FROM Orders O, Account A "
-                                            + "WHERE O.Id = A.Id";
+                                    String query = "SELECT O.Id, O.NumShares, O.PricePerShare, O.DateTime, O.Percentage, O.PriceType, O.OrderType, T.StockId "
+                                            + "FROM Orders O, Trade T "
+                                            + "WHERE O.Id = T.OrderId AND T.AccountId = ?";
                                     java.sql.PreparedStatement ps = conn.prepareStatement(query);
+                                    ps.setString(1, session.getValue("AccountId").toString());
                                     java.sql.ResultSet rs = ps.executeQuery();
 %>
                                   <div class="col-md-12">
@@ -70,6 +71,7 @@
             <th>Percentage</th>
             <th>PriceType</th>
             <th>OrderType</th>
+            <th>StockId</th>
         </tr>
                                   <%  while (rs.next()){ %>
                                     <tr>
@@ -80,6 +82,7 @@
                         <td><%=rs.getString("Percentage")%></td>
                         <td><%=rs.getString("PriceType")%></td>
                         <td><%=rs.getString("OrderType")%></td>
+                        <td><%=rs.getString("StockId")%></td>
                         </tr>
                                     
                                     <%

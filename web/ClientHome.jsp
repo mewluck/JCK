@@ -79,7 +79,9 @@
     
 <h1><strong>Welcome <%=session.getValue("login")%></strong></h1>
 
+
 <table class="table">
+    <h1>Current Stock Holdings</h1>
     <tr>
         <th>Stock</th>
         <th>Number of Shares</th>
@@ -89,7 +91,9 @@
         <td><%=rs.getString("Stock")%></td>
         <td><%=rs.getString("NumShares")%></td>
     </tr>
-    <% }%>
+    <% 
+    session.putValue("AccountId", rs.getString("Id"));
+    }%>
 </table>
 
     <% }
